@@ -4,6 +4,7 @@ const restartButton = document.getElementById('restartButton');
 const changePhaseButton = document.getElementById('changePhaseButton');
 const startButton = document.getElementById('startButton');
 const phaseSelect = document.getElementById('phaseSelect');
+const audio = document.getElementById('gameAudio');
 
 // Variáveis globais
 let box = 20;
@@ -25,6 +26,8 @@ function startGame() {
   changePhaseButton.style.display = 'inline-block'; // Mostrar botão de mudança de fase
   phase = parseInt(phaseSelect.value); // Obter a fase selecionada
   game = setInterval(update, 100);
+  
+  audio.play(); // Começa a tocar a música
 }
 
 // Função para gerar comida em uma posição válida
@@ -92,6 +95,7 @@ function update() {
     (phase === 2 && collision(snakeX, snakeY, snake) && (snakeX >= 0 && snakeY >= 0 && snakeX < canvas.width && snakeY < canvas.height))
   ) {
     clearInterval(game);
+    audio.pause(); // Pausar a música
     restartButton.style.display = 'block'; // Mostrar o botão de reinício
     alert('Game Over! Sua pontuação: ' + score);
   }
@@ -122,7 +126,11 @@ document.addEventListener('keydown', (event) => {
 startButton.addEventListener('click', startGame);
 
 // Lidar com o clique do botão de reinício
-restartButton.addEventListener('click', startGame);
+restartButton.addEventListener('click', () => {
+  audio.currentTime = 0; // Reinicia a música
+  audio.play(); // Toca a música
+  startGame();
+});
 
 // Lidar com a mudança de fase
 changePhaseButton.addEventListener('click', () => {

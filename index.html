@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jogo da Cobra</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Cobra</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #282c34;
+            color: white;
+        }
+        #gameCanvas {
+            border: 1px solid #fff;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-  <h1>Jogo da Cobra</h1>
-  
-  <div id="menu">
-    <label for="phaseSelect">Escolha a Fase:</label>
-    <select id="phaseSelect">
-      <option value="1">Fase 1 (Clássica)</option>
-      <option value="2">Fase 2 (Reaparecer)</option>
-    </select>
+    <canvas id="gameCanvas" width="400" height="400" style="display:none;"></canvas>
     <button id="startButton">Iniciar Jogo</button>
-  </div>
-  
-  <canvas id="gameCanvas" width="400" height="400" style="display: none;"></canvas>
-  <button id="restartButton" style="display: none;">Reiniciar Jogo</button>
-  <button id="changePhaseButton" style="display: none;">Mudar Fase</button>
-  
-  <script src="script.js"></script>
+    <button id="restartButton" style="display:none;">Reiniciar Jogo</button>
+    <button id="changePhaseButton" style="display:none;">Mudar Fase</button>
+    <select id="phaseSelect">
+        <option value="1">Fase Clássica</option>
+        <option value="2">Fase de Reaparecimento</option>
+    </select>
+    
+    <!-- Adicionando o elemento de áudio -->
+    <audio id="gameAudio" loop>
+        <source src="msc.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <script src="script.js"></script>
 </body>
 </html>
