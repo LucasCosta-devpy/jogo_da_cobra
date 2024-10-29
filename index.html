@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Cobra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Jogo da Cobra</h1>
+  
+  <div id="menu">
+    <label for="phaseSelect">Escolha a Fase:</label>
+    <select id="phaseSelect">
+      <option value="1">Fase 1 (Clássica)</option>
+      <option value="2">Fase 2 (Reaparecer)</option>
+    </select>
+    <button id="startButton">Iniciar Jogo</button>
+  </div>
+  
+  <canvas id="gameCanvas" width="400" height="400" style="display: none;"></canvas>
+  <button id="restartButton" style="display: none;">Reiniciar Jogo</button>
+  <button id="changePhaseButton" style="display: none;">Mudar Fase</button>
+  
+  <script src="script.js"></script>
+</body>
+</html>
