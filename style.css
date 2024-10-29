@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #282c34;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  canvas {
+    border: 1px solid #61dafb;
+    background-color: #1c1e22;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #61dafb;
+    border: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #21a1f1;
+  }
+  
